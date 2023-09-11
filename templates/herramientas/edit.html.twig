@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Herramientas{% endblock %}
+
+{% block body %}
+    <h1>Edit Herramientas</h1>
+
+    {{ include('herramientas/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_herramientas_index') }}">back to list</a>
+
+    {{ include('herramientas/_delete_form.html.twig') }}
+{% endblock %}

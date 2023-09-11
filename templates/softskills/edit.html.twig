@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Softskills{% endblock %}
+
+{% block body %}
+    <h1>Edit Softskills</h1>
+
+    {{ include('softskills/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_softskills_index') }}">back to list</a>
+
+    {{ include('softskills/_delete_form.html.twig') }}
+{% endblock %}

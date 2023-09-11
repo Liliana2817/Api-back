@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Front{% endblock %}
+
+{% block body %}
+    <h1>Front</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ front.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ front.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ front.logo }}</td>
+            </tr>
+            <tr>
+                <th>Nivel</th>
+                <td>{{ front.nivel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_front_index') }}">back to list</a>
+
+    <a href="{{ path('app_front_edit', {'id': front.id}) }}">edit</a>
+
+    {{ include('front/_delete_form.html.twig') }}
+{% endblock %}

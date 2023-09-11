@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ExperienciLaboral index{% endblock %}
+
+{% block body %}
+    <h1>ExperienciLaboral index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombreempresa</th>
+                <th>Puesto</th>
+                <th>Descripcion</th>
+                <th>Fechainicio</th>
+                <th>Fechafin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for experienci_laboral in experienci_laborals %}
+            <tr>
+                <td>{{ experienci_laboral.id }}</td>
+                <td>{{ experienci_laboral.nombreempresa }}</td>
+                <td>{{ experienci_laboral.puesto }}</td>
+                <td>{{ experienci_laboral.descripcion }}</td>
+                <td>{{ experienci_laboral.fechainicio }}</td>
+                <td>{{ experienci_laboral.fechafin }}</td>
+                <td>
+                    <a href="{{ path('app_experienci_laboral_show', {'id': experienci_laboral.id}) }}">show</a>
+                    <a href="{{ path('app_experienci_laboral_edit', {'id': experienci_laboral.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_experienci_laboral_new') }}">Create new</a>
+{% endblock %}

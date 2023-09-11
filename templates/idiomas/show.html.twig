@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Idiomas{% endblock %}
+
+{% block body %}
+    <h1>Idiomas</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ idioma.id }}</td>
+            </tr>
+            <tr>
+                <th>Idioma</th>
+                <td>{{ idioma.idioma }}</td>
+            </tr>
+            <tr>
+                <th>Nivelhablado</th>
+                <td>{{ idioma.nivelhablado }}</td>
+            </tr>
+            <tr>
+                <th>Nivelescrito</th>
+                <td>{{ idioma.nivelescrito }}</td>
+            </tr>
+            <tr>
+                <th>Titulacion</th>
+                <td>{{ idioma.titulacion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_idiomas_index') }}">back to list</a>
+
+    <a href="{{ path('app_idiomas_edit', {'id': idioma.id}) }}">edit</a>
+
+    {{ include('idiomas/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Softskills{% endblock %}
+
+{% block body %}
+    <h1>Create new Softskills</h1>
+
+    {{ include('softskills/_form.html.twig') }}
+
+    <a href="{{ path('app_softskills_index') }}">back to list</a>
+{% endblock %}

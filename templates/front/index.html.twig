@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Front index{% endblock %}
+
+{% block body %}
+    <h1>Front index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Logo</th>
+                <th>Nivel</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for front in fronts %}
+            <tr>
+                <td>{{ front.id }}</td>
+                <td>{{ front.nombre }}</td>
+                <td>{{ front.logo }}</td>
+                <td>{{ front.nivel }}</td>
+                <td>
+                    <a href="{{ path('app_front_show', {'id': front.id}) }}">show</a>
+                    <a href="{{ path('app_front_edit', {'id': front.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_front_new') }}">Create new</a>
+{% endblock %}

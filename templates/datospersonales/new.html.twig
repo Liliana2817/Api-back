@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Datospersonales{% endblock %}
+
+{% block body %}
+    <h1>Create new Datospersonales</h1>
+
+    {{ include('datospersonales/_form.html.twig') }}
+
+    <a href="{{ path('app_datospersonales_index') }}">back to list</a>
+{% endblock %}

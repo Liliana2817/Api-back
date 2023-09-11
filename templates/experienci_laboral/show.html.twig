@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ExperienciLaboral{% endblock %}
+
+{% block body %}
+    <h1>ExperienciLaboral</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ experienci_laboral.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombreempresa</th>
+                <td>{{ experienci_laboral.nombreempresa }}</td>
+            </tr>
+            <tr>
+                <th>Puesto</th>
+                <td>{{ experienci_laboral.puesto }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ experienci_laboral.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Fechainicio</th>
+                <td>{{ experienci_laboral.fechainicio }}</td>
+            </tr>
+            <tr>
+                <th>Fechafin</th>
+                <td>{{ experienci_laboral.fechafin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_experienci_laboral_index') }}">back to list</a>
+
+    <a href="{{ path('app_experienci_laboral_edit', {'id': experienci_laboral.id}) }}">edit</a>
+
+    {{ include('experienci_laboral/_delete_form.html.twig') }}
+{% endblock %}

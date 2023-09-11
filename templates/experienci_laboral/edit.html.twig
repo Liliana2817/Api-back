@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ExperienciLaboral{% endblock %}
+
+{% block body %}
+    <h1>Edit ExperienciLaboral</h1>
+
+    {{ include('experienci_laboral/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_experienci_laboral_index') }}">back to list</a>
+
+    {{ include('experienci_laboral/_delete_form.html.twig') }}
+{% endblock %}

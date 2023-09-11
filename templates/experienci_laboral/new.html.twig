@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ExperienciLaboral{% endblock %}
+
+{% block body %}
+    <h1>Create new ExperienciLaboral</h1>
+
+    {{ include('experienci_laboral/_form.html.twig') }}
+
+    <a href="{{ path('app_experienci_laboral_index') }}">back to list</a>
+{% endblock %}
